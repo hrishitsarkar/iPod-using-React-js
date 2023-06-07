@@ -1,0 +1,34 @@
+.menu{
+    width: 50%;
+    height: 210px;
+    background-color: white;
+    position: absolute;
+    border-top: 1px solid black;
+    
+}
+.head{
+    font-size: 1.2rem;
+    border-bottom: 1px solid black;
+}
+.unordered{
+    text-align: left;
+    
+    width: 70px
+}
+.lists{
+    list-style: none;
+    padding: 5px;
+    margin-left: -30px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    
+
+}
+.active{
+    list-style: none;
+    margin-left: -30px;
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: #1877F2;
+    color: white;
+}

@@ -1,0 +1,55 @@
+.wheelContainer{
+    height: 250px;
+    width: 250px;
+    background-color: #303231;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 0px 20px 20px;
+  }
+  
+  .redWheel{
+    background-color: red;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  
+  }
+  .selectWheel{
+    background-color: #303231;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+  }
+  .menuBtn{
+    font-weight: bold;
+    position: absolute;
+    top : 25px;
+    color: white;
+  }
+  .rewind{
+    height: 20px;
+    width: 20px;
+    
+    position: absolute;
+    left : 20px;
+    
+  }
+  .forward{
+    height: 20px;
+    width: 20px;
+    
+    position: absolute;
+    right: 20px;
+    
+  }
+  .playPause{
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    bottom: 20px;
+  }
