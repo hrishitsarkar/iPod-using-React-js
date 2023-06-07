@@ -1,0 +1,12 @@
+.now{
+    width: 100%;
+    background-color: white;
+    height: 230px;
+    position: absolute;
+
+}
+.banner{
+    height: 100px;
+    width: 100px;
+    margin:20px;
+}

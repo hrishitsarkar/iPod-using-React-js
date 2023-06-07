@@ -9,7 +9,7 @@ export default class Ipod extends React.Component{
         super();
         this.state = {
             activeItem : 'NowPlaying',
-            activePage : 'MenuList',
+            activePage : 'NowPlaying',
             
         }
     }
@@ -23,7 +23,7 @@ rotateWheel = () => {
         let newAngle = e.detail.distanceFromLast;
         
         if(newAngle > 0){
-            console.log(change);
+            
             change++;
             if(change === 15){
                 change = 0;
