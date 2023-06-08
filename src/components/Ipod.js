@@ -3,6 +3,9 @@ import React from "react";
 import Wheel from "./Wheel";
 import Screen from "./Screen";
 import ZingTouch from "zingtouch";
+import {useRef} from 'react'
+
+import sound from '../assets/songs/Starboy.mp3'
 
 export default class Ipod extends React.Component{
     constructor(){
@@ -10,11 +13,15 @@ export default class Ipod extends React.Component{
         this.state = {
             activeItem : 'NowPlaying',
             activePage : 'NowPlaying',
+            play : false,
+
+            
+            
             
         }
     }
 
-
+    
 rotateWheel = () => {
     var rotateWheel = document.getElementById('rotating-wheel');
     var activeRegion = new ZingTouch.Region(rotateWheel);
@@ -86,11 +93,24 @@ rotateWheel = () => {
     })
 
 }
+    componentDidMount(){
+        
+        let audio = document.getElementById('audio-element');
+        
+        this.setState({
+            audio : audio
+        })
+        console.log("state" , this.state);
+        
+    }
     render(){
         
         return (
             <>
-                <Screen activeItem = {this.state.activeItem} activePage = {this.state.activePage}/>
+                <audio id="audio-element" className="audio">
+                    <source src = {sound}></source>
+                </audio>
+                <Screen activeItem = {this.state.activeItem} activePage = {this.state.activePage} audio = {this.state.audio} />
                 
                 <Wheel rotateWheel = {this.rotateWheel}/>
             </>
