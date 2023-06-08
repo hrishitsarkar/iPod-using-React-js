@@ -1,4 +1,10 @@
 .game{
     width: 100%;
-    
+
+}
+.gif{
+    width: 100%;
+    position: absolute;
+    left:0;
+    height: 210px;
 }

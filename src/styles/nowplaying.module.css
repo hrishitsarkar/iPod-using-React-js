@@ -10,3 +10,16 @@
     width: 100px;
     margin:20px;
 }
+.seekbar{
+    width: 60%;
+    
+   
+    position: absolute;
+    bottom : 0px;
+    left : 40px
+}
+.leftPara{
+    position: absolute;
+    bottom: -15px;
+    left: 5px;
+}
