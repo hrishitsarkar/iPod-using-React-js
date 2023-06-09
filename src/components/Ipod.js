@@ -17,7 +17,7 @@ export default class Ipod extends React.Component{
             activeItem : 'NowPlaying',
             activePage : 'NowPlaying',
             play : false,
-            
+            audio : null,
             data : [
                 {
                     url : sound1,
@@ -111,13 +111,13 @@ rotateWheel = () => {
 
 }
 
-    // componentDidMount(){
+    componentDidMount(){
 
-    //     let audio = document.getElementById('audio-element');
+        let audio = document.getElementById('audio-element');
         
-    //     this.setState({ audio: audio }, () => {
-    //         console.log("state", this.state);
-    //     });
+        this.setState({ audio: audio }, () => {
+            console.log("state", this.state);
+        });
         
         
     // }
@@ -127,13 +127,13 @@ rotateWheel = () => {
                 
     //         }
     //     }
-    // }
+    }
     render(){
         
         return (
             <>
-                
-                <Screen activeItem = {this.state.activeItem} activePage = {this.state.activePage} data = {this.state.data} current = {this.state.current} play ={this.state.play} />
+                <audio id="audio-element" className="audio" src = {this.state.data[this.state.current].url} autoPlay></audio>
+                <Screen activeItem = {this.state.activeItem} activePage = {this.state.activePage} data = {this.state.data} current = {this.state.current} play ={this.state.play} audio = {this.state.audio} />
                 
                 <Wheel rotateWheel = {this.rotateWheel}/>
             </>

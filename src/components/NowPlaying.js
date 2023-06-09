@@ -28,9 +28,9 @@ export default class NowPlaying extends React.Component{
         const {data,current} = this.props;
         return (
             <>
-            <audio id="audio-element" className="audio" src = {data[current].url} autoPlay>
+            
                     
-            </audio>
+            
             
             <div className={styleNow.now}>
                 <img className={styleNow.banner} src={data[current].images} />
