@@ -15,7 +15,12 @@ export default class NowPlaying extends React.Component{
             console.log(progress)
 
             let myprogressBar = document.getElementById('progress');
-            myprogressBar.value = progress;
+                
+                if(myprogressBar != null){
+                    myprogressBar.style.width = progress + '%';
+                }
+            
+            
         })
         
         
@@ -24,8 +29,13 @@ export default class NowPlaying extends React.Component{
 
         // 
     }
+    
     render(){
-        const {data,current} = this.props;
+        const {data,current,width,audio} = this.props;
+        const style = {
+            width : width
+        }
+        console.log(audio.currentTime)
         return (
             <>
             
@@ -37,9 +47,12 @@ export default class NowPlaying extends React.Component{
                 <marquee><b>{data[current].name}</b></marquee>
             </div>
             <div className={styleNow.barContainer}>
-                <p className={styleNow.leftPara}>0</p>
-                <input type= "range" className={styleNow.seekbar} id="progress" />
-                    
+                <p className={styleNow.leftPara}>{audio !== null ? Math.floor(audio.currentTime) : "0 / 0"}</p>
+                {/* <input type= "range"  value= {val} className={styleNow.seekbar} id="progress" /> */}
+                <div className={styleNow.fillContainer}>
+                    <div className={styleNow.fill} style={style} id='progress'></div>
+                </div>
+                <p className={styleNow.rightPara}>{audio !== null ? Math.floor(audio.duration) : "0 / 0"}</p>
                 
             </div>
             </>

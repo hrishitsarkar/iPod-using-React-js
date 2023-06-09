@@ -1,0 +1,9 @@
+.settings{
+    width: 100%;
+}
+.gif{
+    width: 100%;
+    position: absolute;
+    top:20px;
+    left: 0;
+}

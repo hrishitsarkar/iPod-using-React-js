@@ -20,6 +20,24 @@
 }
 .leftPara{
     position: absolute;
-    bottom: -15px;
-    left: 5px;
+    bottom: -20px;
+    left: 10px;
+}
+.fillContainer{
+    height: 5px;
+    width: 70%;
+    position: absolute;
+    border: 1px solid black;
+    bottom: 0;
+    left: 33px;
+}
+.fill{
+    background-color: red;
+    height: 100%;
+    
+}
+.rightPara{
+    position: absolute;
+    bottom: -20px;
+    right: 5px;
 }
