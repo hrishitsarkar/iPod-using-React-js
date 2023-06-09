@@ -1,10 +1,11 @@
 
 import styleGame from '../styles/games.module.css'
+import game from '../assets/images/game.gif'
 export default function Games(){
     return (
         <>
         <div className={styleGame.game}>
-            <img className={styleGame.gif} src='https://art.pixilart.com/16c3630a9147a08.gif' />
+            <img className={styleGame.gif} src={game} />
         </div>
         </>
     )

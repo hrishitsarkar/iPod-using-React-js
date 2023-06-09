@@ -4,6 +4,7 @@ import styleNow from '../styles/nowplaying.module.css';
 export default class NowPlaying extends React.Component{
     
     
+    
     componentDidMount(){
         var progress;
        let audio = document.getElementById('audio-element');
@@ -35,7 +36,8 @@ export default class NowPlaying extends React.Component{
         const style = {
             width : width
         }
-        console.log(audio.currentTime)
+       
+        
         return (
             <>
             

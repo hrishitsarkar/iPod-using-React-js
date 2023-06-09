@@ -7,6 +7,8 @@ import Settings from "./Settings";
 import MyMusic from "./MyMusic";
 import Artist from "./Artist";
 import Album from './Album'
+import wallpaper from '../assets/images/hills.jpg'
+import battery from '../assets/images/battery.png'
 export default class Screen extends React.Component{
 render(){
     const {activeItem,activePage,data,current,play,audio,width} = this.props;
@@ -16,7 +18,7 @@ render(){
         <>
             <div className={screenStyle.screenContainer}>
                 <div className={screenStyle.mainScreen}>
-                <div className={screenStyle.nav}><img className={screenStyle.battery} src="https://cdn-icons-png.flaticon.com/128/664/664882.png" /></div>
+                <div className={screenStyle.nav}><img className={screenStyle.battery} src={battery} /></div>
                 
                 {activePage === 'MenuList' ? <MenuList activeItem = {activeItem} activePage = {activePage}/> : null }
                 {activePage === 'NowPlaying' ? <NowPlaying data = {data} current = {current} play = {play} audio = {audio} width = {width} /> : null}
@@ -28,7 +30,7 @@ render(){
 
                 
                 
-                <img className={screenStyle.wallpaper} src="https://images.pexels.com/photos/1287089/pexels-photo-1287089.jpeg?cs=srgb&dl=pexels-eberhard-grossgasteiger-1287089.jpg&fm=jpg" />
+                <img className={screenStyle.wallpaper} src={wallpaper} />
                 
                 
 
