@@ -7,7 +7,7 @@ class App extends React.Component {
 
     return (
       <>
-      <div className="container">
+      <div className="container" draggable= "false">
       <Ipod />
       </div>
       </>

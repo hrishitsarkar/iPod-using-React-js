@@ -3,7 +3,7 @@ import styleMenu from '../styles/menulist.module.css'
 
 
 export default function MenuList(props){
-    
+    //destructuring the props
     const {activeItem,activePage} = props;
     return (
         <>

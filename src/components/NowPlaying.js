@@ -1,62 +1,64 @@
 import React from "react";
 import styleNow from '../styles/nowplaying.module.css';
 
-export default class NowPlaying extends React.Component{
-    
-    
-    
-    componentDidMount(){
-        var progress;
-       let audio = document.getElementById('audio-element');
-       console.log(audio);
-       
-       
-       audio.addEventListener("timeupdate",function(){
-            progress = ((audio.currentTime/audio.duration) * 100);
-            console.log(progress)
+export default class NowPlaying extends React.Component {
 
-            let myprogressBar = document.getElementById('progress');
-                
-                if(myprogressBar != null){
+
+
+    componentDidMount() {
+
+        var progress;
+        //fetching audio element
+        let audio = document.getElementById('audio-element');
+
+
+        //adding event listened on audio
+        audio.addEventListener("timeupdate", function () {
+            //to do this asynchronously we use setTimeout
+            setTimeout(() => {
+                //fetching the progress
+                progress = ((audio.currentTime / audio.duration) * 100);
+                //fetching the progress bar
+                let myprogressBar = document.getElementById('progress');
+
+                if (myprogressBar != null) {
+                    //changing the width as the song progresses in percentage
                     myprogressBar.style.width = progress + '%';
                 }
-            
-            
-        })
-        
-        
-        
-        // console.log(this.props.audio.props);
 
-        // 
+            }, 1000);
+
+
+
+
+        })
     }
-    
-    render(){
-        const {data,current,width,audio} = this.props;
-        const style = {
-            width : width
-        }
-       
-        
+
+
+
+    render() {
+        //destructuring
+        const { data, current, audio } = this.props;
+
+
+
         return (
             <>
-            
-                    
-            
-            
-            <div className={styleNow.now}>
-                <img className={styleNow.banner} src={data[current].images} />
-                <marquee><b>{data[current].name}</b></marquee>
-            </div>
-            <div className={styleNow.barContainer}>
-                <p className={styleNow.leftPara}>{audio !== null ? Math.floor(audio.currentTime) : "0 / 0"}</p>
-                {/* <input type= "range"  value= {val} className={styleNow.seekbar} id="progress" /> */}
-                <div className={styleNow.fillContainer}>
-                    <div className={styleNow.fill} style={style} id='progress'></div>
+                {/* rendering data dynamically */}
+                <div className={styleNow.now}>
+
+                    <img className={styleNow.banner} src={data[current].images} />
+                    <marquee><b>{data[current].name}</b></marquee>
                 </div>
-                <p className={styleNow.rightPara}>{audio !== null ? Math.floor(audio.duration) : "0 / 0"}</p>
-                
-            </div>
+                <div className={styleNow.barContainer}>
+                    <p className={styleNow.leftPara}>{audio !== null ? Math.floor(audio.currentTime) : "0 / 0"}</p>
+
+                    <div className={styleNow.fillContainer}>
+                        <div className={styleNow.fill} id='progress'></div>
+                    </div>
+                    <p className={styleNow.rightPara}>{audio !== null && !isNaN(audio.duration) ? Math.floor(audio.duration) : ""}</p>
+
+                </div>
             </>
         )
     }

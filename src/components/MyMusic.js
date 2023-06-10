@@ -1,7 +1,8 @@
 
 import styleMenu from '../styles/menulist.module.css'
 export default function MyMusic(props){
-    const {activeItem,activePage} = props;
+    //destructuring
+    const {activeItem} = props;
 return (<>
         <div className={styleMenu.menu}>
                 <h1 className={styleMenu.head}>iPod.js</h1>

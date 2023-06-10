@@ -11,15 +11,15 @@ import wallpaper from '../assets/images/hills.jpg'
 import battery from '../assets/images/battery.png'
 export default class Screen extends React.Component{
 render(){
-    const {activeItem,activePage,data,current,play,audio,width} = this.props;
-    console.log("screen",this.props);
+    //destructuring the props
+    const {activeItem,activePage,data,current,play,audio,width,time} = this.props;
     
     return (
         <>
             <div className={screenStyle.screenContainer}>
                 <div className={screenStyle.mainScreen}>
-                <div className={screenStyle.nav}><img className={screenStyle.battery} src={battery} /></div>
-                
+                <div className={screenStyle.nav}><span className={screenStyle.time}>{time}</span><img className={screenStyle.battery} src={battery} /></div>
+                {/* rendering based on conditions */}
                 {activePage === 'MenuList' ? <MenuList activeItem = {activeItem} activePage = {activePage}/> : null }
                 {activePage === 'NowPlaying' ? <NowPlaying data = {data} current = {current} play = {play} audio = {audio} width = {width} /> : null}
                 {activePage === 'Games' ? <Games /> : null}
